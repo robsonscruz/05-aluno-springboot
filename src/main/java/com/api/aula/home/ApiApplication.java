@@ -1,4 +1,4 @@
-package com.springhow.example.helloworld;
+package com.api.aula.home;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-public class HelloWorldApplication extends SpringBootServletInitializer {
+public class ApiApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(HelloWorldApplication.class);
+        return application.sources(ApiApplication.class);
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class);
+        SpringApplication.run(ApiApplication.class);
     }
 
 
     @RequestMapping("/")
-    String helloWorld() {
-        return "Hello World :)";
+    String home() {
+        return "Hello World :) v.1.0";
     }
 
 }

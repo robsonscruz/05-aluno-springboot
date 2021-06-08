@@ -25,10 +25,10 @@ node {
     }
 
     stage('Build') {
-        sh "mvn clean install"
+        sh "mvn clean install -x test"
     }
 
     stage('Delivery') {
-        echo "delivery"
+        sh "cp target/api-0.0.1-SNAPSHOT.war /backend/ROOT.war"
     }
 }
