@@ -29,6 +29,6 @@ node {
     }
 
     stage('Delivery') {
-        sh "mv target/api-0.0.1-SNAPSHOT.war /backend/ROOT.war"
+        sh "cp target/api-0.0.1-SNAPSHOT.war /backend/ROOT.war"
     }
 }

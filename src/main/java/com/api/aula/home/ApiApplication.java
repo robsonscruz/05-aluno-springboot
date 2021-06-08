@@ -1,5 +1,8 @@
 package com.api.aula.home;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
 import org.springframework.boot.SpringApplication;
@@ -26,8 +29,15 @@ public class ApiApplication extends SpringBootServletInitializer {
     }
 
     @RequestMapping("/")
-    String home() {
-        return "Hello World :) v.1.0";
+    @ResponseBody
+    ResponseEntity<Object> home() {
+        HashMap<String, Object> map = new HashMap<>();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+
+        map.put("api-aula", "v.1.0.0-" + dateFormat.format(date));
+
+        return new ResponseEntity<Object>(map, HttpStatus.OK);
     }
 
     @RequestMapping("/me")
