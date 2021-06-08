@@ -21,14 +21,14 @@ node {
     }
 
     stage('SonarQube') {
-        echo "sonar"
+        //echo "sonar"
     }
 
     stage('Build') {
-        sh "mvn clean install -x test"
+        sh "mvn clean install -DskipTests"
     }
 
     stage('Delivery') {
-        sh "cp target/api-0.0.1-SNAPSHOT.war /backend/ROOT.war"
+        sh "mv target/api-0.0.1-SNAPSHOT.war /backend/ROOT.war"
     }
 }
