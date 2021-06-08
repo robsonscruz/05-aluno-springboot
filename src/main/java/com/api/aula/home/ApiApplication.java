@@ -25,9 +25,13 @@ public class ApiApplication extends SpringBootServletInitializer {
         return "Hello World :) v.1.0";
     }
 
+    @GetMapping
     @RequestMapping("/country")
-    String country() {
-        JSONArray jsonArray = null;
-        return jsonArray.toString()
+    Map<String, String> country() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("key", "value");
+        map.put("foo", "bar");
+        map.put("aa", "bb");
+        return map;
     }
 }
