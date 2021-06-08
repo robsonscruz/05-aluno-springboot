@@ -32,7 +32,7 @@ public class ApiApplication extends SpringBootServletInitializer {
     @ResponseBody
     ResponseEntity<Object> home() {
         HashMap<String, Object> map = new HashMap<>();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
 
         map.put("api-aula", "v.1.0.0-" + dateFormat.format(date));
