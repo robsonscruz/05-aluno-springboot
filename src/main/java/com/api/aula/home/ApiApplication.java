@@ -29,13 +29,13 @@ public class ApiApplication extends SpringBootServletInitializer {
     }
 
     @RequestMapping("/me")
+    @ResponseBody
     public Map<String, String> me() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", "Robson Cruz");
         map.put("age", "38");
         map.put("from", "Brazil");
 
-        JSONObject json = (new JSONObject()).putAll(map);
-        return json.toString();
+        return map;
     }
 }
