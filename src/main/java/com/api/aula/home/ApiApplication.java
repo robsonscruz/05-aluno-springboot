@@ -9,6 +9,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @SpringBootApplication
@@ -30,12 +32,12 @@ public class ApiApplication extends SpringBootServletInitializer {
 
     @RequestMapping("/me")
     @ResponseBody
-    public Map<String, String> me() {
+    public ResponseEntity<Object> me() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", "Robson Cruz");
         map.put("age", "38");
         map.put("from", "Brazil");
 
-        return map;
+        return new ResponseEntity<Object>(map, HttpStatus.OK);
     }
 }
