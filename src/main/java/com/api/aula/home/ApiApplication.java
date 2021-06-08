@@ -27,12 +27,14 @@ public class ApiApplication extends SpringBootServletInitializer {
         return "Hello World :) v.1.0";
     }
 
-    @RequestMapping("/country")
-    public Map<String, String> country() {
+    @RequestMapping("/me")
+    public Map<String, String> me() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("name", "Robson Cruz");
         map.put("age", "38");
         map.put("from", "Brazil");
-        return map;
+
+        JSONObject json = (new JSONObject()).putAll(map);
+        return json.toString();
     }
 }
