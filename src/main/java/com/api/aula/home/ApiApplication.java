@@ -25,13 +25,11 @@ public class ApiApplication extends SpringBootServletInitializer {
         return "Hello World :) v.1.0";
     }
 
-    @GetMapping
     @RequestMapping("/country")
-    Map<String, String> country() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("key", "value");
-        map.put("foo", "bar");
-        map.put("aa", "bb");
+    public Map<String, String> country() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("results", somePOJO);
         return map;
     }
 }
