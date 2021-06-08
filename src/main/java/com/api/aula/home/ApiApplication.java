@@ -1,5 +1,7 @@
 package com.api.aula.home;
 
+import java.util.Map;
+import java.util.HashMap;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -27,7 +29,7 @@ public class ApiApplication extends SpringBootServletInitializer {
 
     @RequestMapping("/country")
     public Map<String, String> country() {
-        java.util.HashMap<String, Object> map = new java.util.HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         map.put("name", "Robson Cruz");
         map.put("age", "38");
         map.put("from", "Brazil");
